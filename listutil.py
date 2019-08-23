@@ -7,15 +7,24 @@ def unique(list):
     Returns:
         a new list containing only distinct elements from list
 
+
     Examples:
     >>> unique([5])
     [5]
-    >>> unique(["b","a","a","b","b","b","a","a"])
-    ["b","a"]
+    >>> unique(['b','a','a','b','b','b','a','a'])
+    ['b', 'a']
     >>> unique([])
     []
     """
-    pass   # remove this and write the actual code
+
+    ans = []
+    
+    for i in list :
+        if i not in ans:
+            ans.append(i)
+    return ans
+
+
 
 if __name__ == "__main__":
     """Run the doctests in all methods."""

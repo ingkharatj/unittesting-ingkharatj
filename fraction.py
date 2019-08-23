@@ -1,3 +1,4 @@
+import math
 class Fraction:
     """A fraction with a numerator and denominator and arithmetic operations.
 
@@ -12,25 +13,86 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
-        #TODO write this (and remove this TODO comment)
-        pass
+        self.numerator = numerator
+        self.denominator = denominator        
+            
 
-    #TODO Write the __add__ method, and remove this TODO comment.
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
         """
-        pass
+        a = int(self.numerator)
+        b = int(self.denominator)
+        c = int(frac.numerator)
+        d = int(frac.denominator)
 
-    #TODO write __mul__ and __str__.  Verify __eq__ works with your code.
-    #Optional have fun and overload other operators such as 
-    # __sub__ for f-g
-    # __gt__  for f > g
-    # __neg__ for -f (negation)
+        new_num = (a*d) + (b*c)
+        new_denom = b*d
+        
+        return Fraction(new_num,new_denom).chang_to_easy_form
+    
+    def __sub__(self,frac):
+
+        a = int(self.numerator)
+        b = int(self.denominator)
+        c = int(frac.numerator)
+        d = int(frac.denominator)
+
+        new_num = (a*d) - (b*c)
+        new_denom = b*d
+       
+        return Fraction(new_num,new_denom).chang_to_easy_form
+    
+    def __mul__(self,frac):
+        a = int(self.numerator)
+        b = int(self.denominator)
+        c = int(frac.numerator)
+        d = int(frac.denominator)
+
+        new_num = a*c
+        new_denom = b*d
+
+        return Fraction(new_num,new_denom).chang_to_easy_form
+    
+      
+    def chang_to_easy_form(self):
+        gcd = math.gcd(self.numerator,self.denominator)
+        self.numerator = self.numerator/gcd
+        self.denominator = self.denominator/gcd
+        return Fraction(self.numerator,self.denominator)
+    
+    def __str__(self):
+        self.chang_to_easy_form()
+        # if self.denominator == 1:
+        #     return f"{self.numerator}"
+        # elif self.denominator == -1 :
+        #     return f"-{self.numerator}"
+        # elif self.denominator > 1 :
+        #     return f"{self.numerator}/{self.denominator}"
+        # elif self.denominator < 1 :
+        #     return f"-{self.numerator}/{self.denominator}"
+        
+
+        
+
+
+        
+        
+    
+        
+
 
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
            Fractions are stored in proper form so the internal representation
            is unique (3/6 is same as 1/2).
         """
-        return self.numerator == frac.numerator and self.denominator == frac.denominator
+        Fraction.chang_to_easy_form(self)
+        Fraction.chang_to_easy_form(frac)
+        if self.numerator == frac.numerator and self.denominator == frac.denominator:
+            return True
+        else:
+            return False
+        
+
+    

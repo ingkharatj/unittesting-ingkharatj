@@ -43,3 +43,5 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(f.__eq__(h))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
+if __name__ == '__main__':
+    unittest.main()
