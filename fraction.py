@@ -19,8 +19,6 @@ class Fraction:
             gcd = math.gcd(self.numerator,self.denominator)
             self.numerator = self.numerator/gcd
             self.denominator = self.denominator/gcd
-        
-               
             
 
     def __add__(self, frac):
