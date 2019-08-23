@@ -14,7 +14,13 @@ class Fraction:
            and denominator (default 1).
         """
         self.numerator = numerator
-        self.denominator = denominator        
+        self.denominator = denominator
+        if self.denominator is not 0 :
+            gcd = math.gcd(self.numerator,self.denominator)
+            self.numerator = self.numerator/gcd
+            self.denominator = self.denominator/gcd
+        
+               
             
 
     def __add__(self, frac):
@@ -29,7 +35,7 @@ class Fraction:
         new_num = (a*d) + (b*c)
         new_denom = b*d
         
-        return Fraction(new_num,new_denom).chang_to_easy_form
+        return Fraction(new_num,new_denom)
     
     def __sub__(self,frac):
 
@@ -41,7 +47,7 @@ class Fraction:
         new_num = (a*d) - (b*c)
         new_denom = b*d
        
-        return Fraction(new_num,new_denom).chang_to_easy_form
+        return Fraction(new_num,new_denom)
     
     def __mul__(self,frac):
         a = int(self.numerator)
@@ -52,34 +58,14 @@ class Fraction:
         new_num = a*c
         new_denom = b*d
 
-        return Fraction(new_num,new_denom).chang_to_easy_form
+        return Fraction(new_num,new_denom)
     
-      
-    def chang_to_easy_form(self):
-        gcd = math.gcd(self.numerator,self.denominator)
-        self.numerator = self.numerator/gcd
-        self.denominator = self.denominator/gcd
-        return Fraction(self.numerator,self.denominator)
-    
+          
     def __str__(self):
-        self.chang_to_easy_form()
-        # if self.denominator == 1:
-        #     return f"{self.numerator}"
-        # elif self.denominator == -1 :
-        #     return f"-{self.numerator}"
-        # elif self.denominator > 1 :
-        #     return f"{self.numerator}/{self.denominator}"
-        # elif self.denominator < 1 :
-        #     return f"-{self.numerator}/{self.denominator}"
-        
-
-        
-
-
-        
-        
-    
-        
+        if self.denominator == 1:
+            return f"{self.numerator}"
+        else:
+            return f"{self.numerator/self.denominator}"
 
 
     def __eq__(self, frac):
@@ -87,8 +73,7 @@ class Fraction:
            Fractions are stored in proper form so the internal representation
            is unique (3/6 is same as 1/2).
         """
-        Fraction.chang_to_easy_form(self)
-        Fraction.chang_to_easy_form(frac)
+    
         if self.numerator == frac.numerator and self.denominator == frac.denominator:
             return True
         else:
