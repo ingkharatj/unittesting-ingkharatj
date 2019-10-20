@@ -1,0 +1,18 @@
+  
+language: python
+
+python: "3.6"
+
+# don't clone more than necessary
+git:
+  depth: 1
+
+install:
+  - pip install codecov
+  - pip install coverage
+# script to run tests. Script can have many commands, one per line.
+script:
+  - coverage run fraction_test.py
+  - coverage report
+after_success:
+  - codecov
