@@ -5,7 +5,6 @@ by Ingkharat Jangchud
 
 ## Test Cases for unique
 
-Write a table describing your test cases.
 
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
@@ -17,4 +16,12 @@ Write a table describing your test cases.
 
 
 ## Test Cases for Fraction
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| test_str               |  empty list         |
+| test__init__           |  numerator, denominator  |
+| test_add               |  total frac1 + frac2     |
+| test_eq                | 2 fraction is same value |
+
+
 # unittesting-ingkharatj
