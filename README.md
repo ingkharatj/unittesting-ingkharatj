@@ -1,6 +1,6 @@
-## Unit Testing Assignment
+## Unit Testing Assignment  [![codecov](https://codecov.io/gh/ingkharatj/unittesting-ingkharatj/branch/master/graph/badge.svg)](https://codecov.io/gh/ingkharatj/unittesting-ingkharatj)  [![Build Status](https://travis-ci.com/ingkharatj/unittesting-ingkharatj.svg?branch=master)](https://travis-ci.com/ingkharatj/unittesting-ingkharatj)
 
-by Bill Gates.
+by Ingkharat Jangchud
 
 
 ## Test Cases for unique
