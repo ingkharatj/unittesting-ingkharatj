@@ -96,7 +96,3 @@ class FractionTest(unittest.TestCase):
 
         self.assertFalse(a==c)
 
-        
-
-if __name__ == '__main__':
-    unittest.main()
